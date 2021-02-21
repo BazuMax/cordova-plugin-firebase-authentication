@@ -217,7 +217,7 @@
         changeRequest.displayName = options[@"displayName"];
     }
     if (options[@"photoURL"]) {
-        changeRequest.photoURL = options[@"photoURL"];
+        changeRequest.photoURL = [NSURL URLWithString:options[@"photoURL"]];
     }
     [changeRequest commitChangesWithCompletion:^(NSError *error) {
         [self respondWith:error callbackId:command.callbackId];
